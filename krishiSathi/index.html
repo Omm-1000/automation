@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KrishiSathi – Connecting Farmers & Customers</title>
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-50 font-[Poppins]">
+  <!-- Navbar -->
+  <nav class="bg-green-700 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex-shrink-0 text-2xl font-bold">KrishiSathi</div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <button class="nav-link hover:bg-green-800 px-3 py-2 rounded-md" data-target="home">Home</button>
+            <button class="nav-link hover:bg-green-800 px-3 py-2 rounded-md" data-target="sell">Sell Produce</button>
+            <button class="nav-link hover:bg-green-800 px-3 py-2 rounded-md" data-target="market">Marketplace</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sections -->
+  <!-- Home Section -->
+  <section id="home" class="section active">
+    <div class="max-w-7xl mx-auto py-16 px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-green-700 mb-6">Welcome to KrishiSathi</h1>
+      <p class="text-gray-700 mb-8 text-lg max-w-2xl mx-auto">A farmer-friendly marketplace where growers can list their fresh produce directly to customers without middlemen. Support our farmers and enjoy wholesome farm products delivered to your doorstep.</p>
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1350&q=80" alt="Farm" class="rounded-lg shadow-lg mx-auto w-full md:w-3/4" />
+    </div>
+  </section>
+
+  <!-- Sell Produce Section -->
+  <section id="sell" class="section hidden">
+    <div class="max-w-3xl mx-auto py-12 px-6">
+      <h2 class="text-3xl font-bold text-green-700 mb-6 text-center">Share Your Produce</h2>
+      <form id="productForm" class="space-y-6 bg-white p-8 rounded-lg shadow">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Product Name</label>
+          <input type="text" id="productName" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" placeholder="e.g., Organic Tomatoes" required />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+          <textarea id="productDesc" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" rows="3" placeholder="Short description"></textarea>
+        </div>
+
+        <div class="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+          <div class="flex-1">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Price (₹)</label>
+            <input type="number" id="productPrice" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" placeholder="Price per unit" required />
+          </div>
+          <div class="flex-1">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Available Quantity</label>
+            <input type="number" id="productQty" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" placeholder="e.g., 50" required />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Image URL</label>
+          <input type="url" id="productImg" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" placeholder="https://..." />
+        </div>
+
+        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md">Add Product</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Marketplace Section -->
+  <section id="market" class="section hidden">
+    <div class="max-w-7xl mx-auto py-12 px-6">
+      <h2 class="text-3xl font-bold text-green-700 mb-6 text-center">Marketplace</h2>
+      <div id="productList" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </div>
+  </section>
+
+  <footer class="text-center py-6 text-gray-600">
+    © <span id="year"></span> KrishiSathi. All rights reserved.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

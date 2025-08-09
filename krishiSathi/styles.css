@@ -1,0 +1,11 @@
+/* Custom CSS for KrishiSathi */
+.section.hidden { display: none; }
+.section.active { display: block; }
+
+/* Smooth transitions for sections */
+.section {
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Override Tailwind fonts globally */
+body { font-family: 'Poppins', sans-serif; }
