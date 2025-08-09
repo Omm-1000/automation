@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KrishiSathi — Farmer Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { theme: { extend: { colors: { primary: { 600: '#0da553', 700: '#0b8245' } }, fontFamily: { sans: ['Inter','system-ui'] } } } };
+    </script>
+  </head>
+  <body class="font-sans bg-slate-50 text-slate-800">
+    <header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="/workspace/krishiSathi/index.html" class="flex items-center gap-2"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary-600 text-white font-bold">KS</span><span class="text-lg font-extrabold">KrishiSathi</span></a>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a class="hover:text-primary-700" href="/workspace/krishiSathi/market.html">Marketplace</a>
+          <a class="text-primary-700" href="/workspace/krishiSathi/farmer.html">Farmer Portal</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid lg:grid-cols-3 gap-8">
+        <!-- Form -->
+        <section class="lg:col-span-1">
+          <div class="rounded-2xl bg-white border border-slate-200 shadow-sm p-6">
+            <h2 class="text-xl font-bold">Post your produce</h2>
+            <p class="text-sm text-slate-600 mt-1">Add new items to the marketplace. Fields marked * are required.</p>
+            <form id="productForm" class="mt-5 space-y-4">
+              <div>
+                <label class="block text-sm font-medium">Product name *</label>
+                <input required id="name" type="text" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-primary-600 focus:border-primary-600" placeholder="Tomatoes" />
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium">Price per unit (₹) *</label>
+                  <input required id="price" type="number" min="0" step="0.01" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-primary-600 focus:border-primary-600" placeholder="25" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium">Quantity *</label>
+                  <input required id="quantity" type="number" min="1" step="1" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-primary-600 focus:border-primary-600" placeholder="50" />
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium">Unit *</label>
+                  <select id="unit" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-primary-600 focus:border-primary-600">
+                    <option value="kg">kg</option>
+                    <option value="dozen">dozen</option>
+                    <option value="litre">litre</option>
+                    <option value="piece">piece</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium">Category *</label>
+                  <select id="category" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-primary-600 focus:border-primary-600">
+                    <option>Vegetables</option>
+                    <option>Fruits</option>
+                    <option>Grains</option>
+                    <option>Dairy</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Location *</label>
+                <input required id="location" type="text" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-primary-600 focus:border-primary-600" placeholder="Village, District" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Contact (phone or WhatsApp) *</label>
+                <input required id="contact" type="text" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-primary-600 focus:border-primary-600" placeholder="98765 43210" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Image URL</label>
+                <input id="image" type="url" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-primary-600 focus:border-primary-600" placeholder="https://..." />
+                <p class="text-xs text-slate-500 mt-1">Tip: Use a direct image link. Leave blank to use a default image.</p>
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Description</label>
+                <textarea id="description" rows="3" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-primary-600 focus:border-primary-600" placeholder="Freshly harvested, no chemicals."></textarea>
+              </div>
+              <button type="submit" class="w-full inline-flex items-center justify-center rounded-lg bg-primary-600 text-white px-5 py-3 font-semibold shadow hover:bg-primary-700">Post to Marketplace</button>
+            </form>
+          </div>
+        </section>
+
+        <!-- Your listings -->
+        <section class="lg:col-span-2">
+          <div class="flex items-baseline justify-between">
+            <h2 class="text-xl font-bold">Your listings</h2>
+            <div class="text-sm text-slate-600">Autosaved locally</div>
+          </div>
+          <div id="farmerListings" class="mt-4 grid sm:grid-cols-2 xl:grid-cols-3 gap-6"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="border-t border-slate-200 py-8 text-sm text-center text-slate-600">© <span id="year"></span> KrishiSathi</footer>
+
+    <script src="/workspace/krishiSathi/js/app.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      window.addEventListener('DOMContentLoaded', function(){
+        KrishiSathiUI.initFarmerPage();
+      });
+    </script>
+  </body>
+</html>
