@@ -1,0 +1,17 @@
+{
+  "name": "krishisathi",
+  "version": "1.0.0",
+  "description": "Direct farmer to customer marketplace platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 3000",
+    "dev": "live-server --port=3000"
+  },
+  "keywords": ["agriculture", "marketplace", "farmers", "direct-sales"],
+  "author": "KrishiSathi Team",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  }
+}

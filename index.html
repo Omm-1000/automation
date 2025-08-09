@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiSathi - Direct Farm to Table</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-seedling"></i>
+                <span>KrishiSathi</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#products" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#farmers" class="nav-link">Farmers</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="farmer-register.html" class="nav-link btn-primary">Join as Farmer</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Fresh from <span class="highlight">Farm</span> to Your <span class="highlight">Table</span>
+                </h1>
+                <p class="hero-description">
+                    Connect directly with local farmers. Get the freshest produce, support your community, 
+                    and know exactly where your food comes from.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">Shop Now</a>
+                    <a href="farmer-register.html" class="btn btn-secondary">Become a Farmer</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <i class="fas fa-tractor"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose KrishiSathi?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Fresh & Organic</h3>
+                    <p>Get the freshest produce directly from farmers without middlemen</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Direct Connection</h3>
+                    <p>Connect directly with farmers and know exactly where your food comes from</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Support Local</h3>
+                    <p>Support your local farming community and sustainable agriculture</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Fair Prices</h3>
+                    <p>Better prices for farmers, affordable rates for customers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Fresh Products Available</h2>
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="all">All</button>
+                <button class="tab-btn" data-category="vegetables">Vegetables</button>
+                <button class="tab-btn" data-category="fruits">Fruits</button>
+                <button class="tab-btn" data-category="grains">Grains</button>
+                <button class="tab-btn" data-category="dairy">Dairy</button>
+            </div>
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be populated by JavaScript -->
+            </div>
+            <div class="text-center">
+                <a href="products.html" class="btn btn-primary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Farmers Section -->
+    <section id="farmers" class="farmers">
+        <div class="container">
+            <h2 class="section-title">Meet Our Farmers</h2>
+            <div class="farmers-grid">
+                <div class="farmer-card">
+                    <div class="farmer-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Rajesh Kumar</h3>
+                    <p class="farmer-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Punjab, India
+                    </p>
+                    <p class="farmer-specialty">Organic Vegetables & Grains</p>
+                    <a href="farmer-profile.html?id=1" class="btn btn-outline">View Profile</a>
+                </div>
+                <div class="farmer-card">
+                    <div class="farmer-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Priya Sharma</h3>
+                    <p class="farmer-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Kerala, India
+                    </p>
+                    <p class="farmer-specialty">Tropical Fruits & Spices</p>
+                    <a href="farmer-profile.html?id=2" class="btn btn-outline">View Profile</a>
+                </div>
+                <div class="farmer-card">
+                    <div class="farmer-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Arjun Patel</h3>
+                    <p class="farmer-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Gujarat, India
+                    </p>
+                    <p class="farmer-specialty">Dairy Products & Vegetables</p>
+                    <a href="farmer-profile.html?id=3" class="btn btn-outline">View Profile</a>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="farmers.html" class="btn btn-primary">View All Farmers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About KrishiSathi</h2>
+                    <p>
+                        KrishiSathi is a revolutionary platform that connects farmers directly with customers, 
+                        eliminating middlemen and ensuring fair prices for both parties. Our mission is to 
+                        promote sustainable agriculture and support local farming communities.
+                    </p>
+                    <p>
+                        We believe in transparency, quality, and building strong relationships between 
+                        producers and consumers. Join us in creating a more sustainable and equitable 
+                        food system.
+                    </p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Farmers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10,000+</span>
+                            <span class="stat-label">Customers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50,000+</span>
+                            <span class="stat-label">Orders</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>KrishiSathi</span>
+                    </div>
+                    <p>Connecting farmers and customers for a sustainable future.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#farmers">Farmers</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>For Farmers</h3>
+                    <ul>
+                        <li><a href="farmer-register.html">Register</a></li>
+                        <li><a href="farmer-dashboard.html">Dashboard</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Guidelines</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> info@krishisathi.com</p>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                    <p><i class="fas fa-map-marker-alt"></i> India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KrishiSathi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

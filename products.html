@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - KrishiSathi</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-seedling"></i>
+                <span>KrishiSathi</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link active">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="farmers.html" class="nav-link">Farmers</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="farmer-register.html" class="nav-link btn-primary">Join as Farmer</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="products-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Fresh Products from Local Farmers</h1>
+                <p>Discover a wide variety of fresh, organic produce directly from our trusted farmers across India.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="search-filter">
+        <div class="container">
+            <div class="search-filter-container">
+                <div class="search-section">
+                    <div class="search-input-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search for products, farmers, or locations..." class="search-input">
+                    </div>
+                </div>
+                
+                <div class="filter-section">
+                    <div class="filter-group">
+                        <label for="category-filter">Category:</label>
+                        <select id="category-filter" class="filter-select">
+                            <option value="">All Categories</option>
+                            <option value="vegetables">Vegetables</option>
+                            <option value="fruits">Fruits</option>
+                            <option value="grains">Grains</option>
+                            <option value="dairy">Dairy</option>
+                            <option value="spices">Spices</option>
+                            <option value="pulses">Pulses</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="location-filter">Location:</label>
+                        <select id="location-filter" class="filter-select">
+                            <option value="">All Locations</option>
+                            <option value="punjab">Punjab</option>
+                            <option value="kerala">Kerala</option>
+                            <option value="gujarat">Gujarat</option>
+                            <option value="maharashtra">Maharashtra</option>
+                            <option value="tamil-nadu">Tamil Nadu</option>
+                            <option value="uttar-pradesh">Uttar Pradesh</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="price-filter">Price Range:</label>
+                        <select id="price-filter" class="filter-select">
+                            <option value="">All Prices</option>
+                            <option value="0-50">₹0 - ₹50</option>
+                            <option value="50-100">₹50 - ₹100</option>
+                            <option value="100-200">₹100 - ₹200</option>
+                            <option value="200+">₹200+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="organic-filter">Organic:</label>
+                        <select id="organic-filter" class="filter-select">
+                            <option value="">All Products</option>
+                            <option value="organic">Organic Only</option>
+                            <option value="conventional">Conventional</option>
+                        </select>
+                    </div>
+                    
+                    <button id="clear-filters" class="btn btn-outline">
+                        <i class="fas fa-times"></i> Clear Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-listing">
+        <div class="container">
+            <div class="products-header">
+                <div class="results-info">
+                    <span id="results-count">Showing all products</span>
+                </div>
+                <div class="sort-options">
+                    <label for="sort-select">Sort by:</label>
+                    <select id="sort-select" class="filter-select">
+                        <option value="name">Name (A-Z)</option>
+                        <option value="price-low">Price (Low to High)</option>
+                        <option value="price-high">Price (High to Low)</option>
+                        <option value="farmer">Farmer Name</option>
+                        <option value="location">Location</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="all-products-grid">
+                <!-- Products will be populated by JavaScript -->
+            </div>
+            
+            <div id="no-results" class="no-results" style="display: none;">
+                <div class="no-results-content">
+                    <i class="fas fa-search"></i>
+                    <h3>No products found</h3>
+                    <p>Try adjusting your search criteria or filters to find what you're looking for.</p>
+                    <button onclick="clearAllFilters()" class="btn btn-primary">Clear All Filters</button>
+                </div>
+            </div>
+            
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be added by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Farmers Section -->
+    <section class="featured-farmers">
+        <div class="container">
+            <h2 class="section-title">Featured Farmers This Week</h2>
+            <div class="farmers-grid">
+                <div class="farmer-card">
+                    <div class="farmer-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Rajesh Kumar</h3>
+                    <p class="farmer-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Punjab, India
+                    </p>
+                    <p class="farmer-specialty">Organic Vegetables & Grains</p>
+                    <div class="farmer-stats">
+                        <span><i class="fas fa-star"></i> 4.8 (120 reviews)</span>
+                        <span><i class="fas fa-box"></i> 25 products</span>
+                    </div>
+                    <a href="farmer-profile.html?id=1" class="btn btn-outline">View Profile</a>
+                </div>
+                
+                <div class="farmer-card">
+                    <div class="farmer-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Priya Sharma</h3>
+                    <p class="farmer-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Kerala, India
+                    </p>
+                    <p class="farmer-specialty">Tropical Fruits & Spices</p>
+                    <div class="farmer-stats">
+                        <span><i class="fas fa-star"></i> 4.9 (89 reviews)</span>
+                        <span><i class="fas fa-box"></i> 18 products</span>
+                    </div>
+                    <a href="farmer-profile.html?id=2" class="btn btn-outline">View Profile</a>
+                </div>
+                
+                <div class="farmer-card">
+                    <div class="farmer-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Arjun Patel</h3>
+                    <p class="farmer-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Gujarat, India
+                    </p>
+                    <p class="farmer-specialty">Dairy Products & Vegetables</p>
+                    <div class="farmer-stats">
+                        <span><i class="fas fa-star"></i> 4.7 (156 reviews)</span>
+                        <span><i class="fas fa-box"></i> 22 products</span>
+                    </div>
+                    <a href="farmer-profile.html?id=3" class="btn btn-outline">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Stay Updated with Fresh Arrivals</h2>
+                    <p>Get notified when new products arrive from your favorite farmers. Never miss out on the freshest produce!</p>
+                </div>
+                <div class="newsletter-form">
+                    <form id="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" id="newsletter-email" placeholder="Enter your email" required class="newsletter-input">
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>KrishiSathi</span>
+                    </div>
+                    <p>Connecting farmers and customers for a sustainable future.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="farmers.html">Farmers</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>For Farmers</h3>
+                    <ul>
+                        <li><a href="farmer-register.html">Register</a></li>
+                        <li><a href="farmer-dashboard.html">Dashboard</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Guidelines</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> info@krishisathi.com</p>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                    <p><i class="fas fa-map-marker-alt"></i> India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KrishiSathi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/products.js"></script>
+</body>
+</html>
