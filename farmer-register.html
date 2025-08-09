@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join as Farmer - KrishiSathi</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-seedling"></i>
+                <span>KrishiSathi</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="farmers.html" class="nav-link">Farmers</a>
+                </li>
+                <li class="nav-item">
+                    <a href="farmer-dashboard.html" class="nav-link">Dashboard</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Form Section -->
+    <section class="registration" style="padding: calc(70px + 2rem) 0 4rem;">
+        <div class="container">
+            <div class="registration-header">
+                <h1 class="section-title">Join KrishiSathi as a Farmer</h1>
+                <p class="registration-subtitle">
+                    Connect directly with customers and grow your business. 
+                    Register today to start selling your fresh produce online.
+                </p>
+            </div>
+
+            <div class="registration-container">
+                <div class="registration-benefits">
+                    <h2>Why Join KrishiSathi?</h2>
+                    <div class="benefit-list">
+                        <div class="benefit-item">
+                            <i class="fas fa-rupee-sign"></i>
+                            <div>
+                                <h3>Better Prices</h3>
+                                <p>Sell directly to customers and get better prices for your produce</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h3>Direct Connection</h3>
+                                <p>Build relationships with your customers and get direct feedback</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <h3>Grow Your Business</h3>
+                                <p>Expand your reach beyond local markets to a wider customer base</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <h3>Easy to Use</h3>
+                                <p>Simple platform designed specifically for farmers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="registration-form-container">
+                    <form id="farmer-registration-form" class="registration-form">
+                        <h2>Farmer Registration</h2>
+                        
+                        <!-- Personal Information -->
+                        <div class="form-section">
+                            <h3>Personal Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" id="email" name="email" class="form-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Farm Information -->
+                        <div class="form-section">
+                            <h3>Farm Information</h3>
+                            <div class="form-group">
+                                <label for="farmName" class="form-label">Farm Name *</label>
+                                <input type="text" id="farmName" name="farmName" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="farmSize" class="form-label">Farm Size (in acres) *</label>
+                                <input type="number" id="farmSize" name="farmSize" class="form-input" min="0.1" step="0.1" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="state" class="form-label">State *</label>
+                                    <select id="state" name="state" class="form-select" required>
+                                        <option value="">Select State</option>
+                                        <option value="andhra-pradesh">Andhra Pradesh</option>
+                                        <option value="bihar">Bihar</option>
+                                        <option value="gujarat">Gujarat</option>
+                                        <option value="haryana">Haryana</option>
+                                        <option value="kerala">Kerala</option>
+                                        <option value="madhya-pradesh">Madhya Pradesh</option>
+                                        <option value="maharashtra">Maharashtra</option>
+                                        <option value="punjab">Punjab</option>
+                                        <option value="rajasthan">Rajasthan</option>
+                                        <option value="tamil-nadu">Tamil Nadu</option>
+                                        <option value="uttar-pradesh">Uttar Pradesh</option>
+                                        <option value="west-bengal">West Bengal</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="district" class="form-label">District *</label>
+                                    <input type="text" id="district" name="district" class="form-input" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="village" class="form-label">Village/City *</label>
+                                <input type="text" id="village" name="village" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <!-- Crop Information -->
+                        <div class="form-section">
+                            <h3>Crop Information</h3>
+                            <div class="form-group">
+                                <label for="primaryCrops" class="form-label">Primary Crops *</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="crops" value="vegetables">
+                                        <span>Vegetables</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="crops" value="fruits">
+                                        <span>Fruits</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="crops" value="grains">
+                                        <span>Grains</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="crops" value="pulses">
+                                        <span>Pulses</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="crops" value="dairy">
+                                        <span>Dairy Products</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="crops" value="spices">
+                                        <span>Spices</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="organicCertified" class="form-label">Organic Certification</label>
+                                <select id="organicCertified" name="organicCertified" class="form-select">
+                                    <option value="">Select Status</option>
+                                    <option value="certified">Certified Organic</option>
+                                    <option value="in-process">Certification in Process</option>
+                                    <option value="not-certified">Not Certified</option>
+                                    <option value="interested">Interested in Certification</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="farmingExperience" class="form-label">Years of Farming Experience *</label>
+                                <select id="farmingExperience" name="farmingExperience" class="form-select" required>
+                                    <option value="">Select Experience</option>
+                                    <option value="1-2">1-2 years</option>
+                                    <option value="3-5">3-5 years</option>
+                                    <option value="6-10">6-10 years</option>
+                                    <option value="11-20">11-20 years</option>
+                                    <option value="20+">20+ years</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Additional Information -->
+                        <div class="form-section">
+                            <h3>Additional Information</h3>
+                            <div class="form-group">
+                                <label for="description" class="form-label">Tell us about your farm and products</label>
+                                <textarea id="description" name="description" class="form-textarea" 
+                                    placeholder="Describe your farming practices, unique products, and what makes your farm special..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="whatsapp" class="form-label">WhatsApp Number (for customer contact)</label>
+                                <input type="tel" id="whatsapp" name="whatsapp" class="form-input" 
+                                    placeholder="Enter WhatsApp number for customer inquiries">
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="form-section">
+                            <div class="form-group">
+                                <label class="checkbox-item terms-checkbox">
+                                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                    <span>I agree to the <a href="#" class="terms-link">Terms and Conditions</a> and <a href="#" class="terms-link">Privacy Policy</a> *</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-user-plus"></i>
+                                Register as Farmer
+                            </button>
+                            <p class="login-link">
+                                Already have an account? <a href="farmer-login.html">Login here</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>KrishiSathi</span>
+                    </div>
+                    <p>Connecting farmers and customers for a sustainable future.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Farmer Guidelines</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> farmers@krishisathi.com</p>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KrishiSathi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/farmer-registration.js"></script>
+</body>
+</html>
